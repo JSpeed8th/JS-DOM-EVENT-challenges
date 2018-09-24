@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#button1, #button2, .text {
+  font-size: 1em;
+  background-color: yellow;
+  /* margin-left: 26vw;
+  margin-top: 40vh; */
+  margin: 10% 5%;
+}
+
+.text {
+  background-color: white;
+}
+
+
+
+#button2 {
+  background-color: red;
+}
