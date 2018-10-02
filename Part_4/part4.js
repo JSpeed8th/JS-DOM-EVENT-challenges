@@ -1,48 +1,30 @@
-var userName = document.querySelector('.userName')
+var username = document.querySelector('.userName');
 var password = document.querySelector('.password')
-var submit = document.querySelector('.submit')
+var submit = document.querySelector('.submit');
 
+submit.addEventListener('click', checkForm)
 
-function passwordResult(password) {
-  if (password !== 12345678) {
-    return false
+function checkForm() {
+  if (checkPassword() == true && checkUsername() == true) {
+    alert('You signed in successfully!')
   } else {
-    return true
+    alert('Please try again')
   }
 }
 
-function splitUsername(userName) {
-  var splitUser = userName.split('')
-  userNameResult(splitUser)
+function checkPassword() {
+  if (password.value == 1234) {
+    return true
+  } else {
+    console.log('password is incorrect')
+  }
 }
 
-function userNameResult(userName) {
-  var number = []
-  for (let i = 0; i < userName.length; i++) {
-    for (let x = 1; x < 10; x++) {
-      if (userName[i] == x) {
-        number.push(userName[i])
-      }
+function checkUsername() {
+  var splitUser = username.value.split('')
+  for (let i = 0; i < splitUser.length; i++) {
+    if (splitUser[i] == 1 || splitUser[i] == 2 || splitUser[i] == 3 || splitUser[i] == 4 || splitUser[i] == 5 || splitUser[i] == 6 || splitUser[i] == 7 || splitUser[i] == 8 || splitUser[i] == 9) {
+      return true;
     }
   }
-  console.log(number)
-  checkUsername(number)
 }
-
-function checkUsername(userName) {
-  if (userName !== []) {
-    true
-  } else {
-    false
-  }
-}
-
-function checkInput(password, userName) {
-  if (passwordResult(password) && splitUsername(userName)) {
-    alert('true');
-  } else {
-    alert('Incorrect')
-  }
-}
-
-submit.addEventListener('click', checkInput)

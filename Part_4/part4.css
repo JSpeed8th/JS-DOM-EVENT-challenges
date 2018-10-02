@@ -1,4 +1,19 @@
-#userName, #email, #submit {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.formBox {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+border-radius: 10px;
+}
+
+input {
   display: block;
-  margin: 1em;
+}
+
+.submit {
+  margin: 0 auto;
 }
